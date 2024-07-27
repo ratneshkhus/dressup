@@ -1,0 +1,131 @@
+.wrapper {
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    height: fit-content;
+    position: relative;
+}
+
+.mainheading_of_mainpage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper_testing_for_filter_and_grid {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.card_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+.filtersectionhere{
+    margin-top: 20px;
+    width: 400px;
+    height: fit-content;
+    animation: showingtags 1s forwards;
+}
+
+.categories {
+    animation: offingtags 1s forwards;
+    transition: width 1s ease;
+    width: 22%;
+    align-items: center;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.categoriesshow {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: fit-content;
+    gap: 10px;
+    flex-wrap: wrap;
+    transition: width 1s ease;
+}
+
+@keyframes offingtags {
+    0% {
+        display: flex;
+        width: 22%;
+    }
+
+    100% {
+        display: none;
+        width: 0%;
+    }
+}
+
+@keyframes showingtags {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 22%;
+    }
+}
+
+.tags {
+    min-width: fit-content;
+    text-wrap: nowrap;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: black;
+}
+
+.selected {
+    width: fit-content;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #8a16ff;
+    background-color: #f4ebff;
+    color: #8a16ff;
+    transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.pricefilter-block input[type="range" i]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: white;
+    outline: none;
+    border-radius: 20px;
+}
+.pricefilter-block input[type="range" i]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 23px;
+    border-radius: 20px;
+    background: #8a16ff;
+    cursor: pointer;
+  }
+  .pricefilter-block{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .btn{
+    background: #8a16ff;
+    width: 100%;
+    outline: none;
+    border: transparent;
+    border-radius: 20px;
+    color: white;
+    padding: 5px;
+  }

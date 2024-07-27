@@ -1,0 +1,122 @@
+
+.cartWarpper {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.cart_card {
+    height: 150px;
+    width: 50%;
+    min-width: 600px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cart_card .imgholde_cart {
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cart_card .imgholde_cart img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cart_card .details_cartitem {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 5px 00px 10px 10px;
+    justify-content: space-between;
+}
+
+.cart_card_scroller {
+    height: 100%;
+    display: block;
+}
+
+/* .cart_card .details_cartitem .cartCARD_head_Warpper{
+
+} */
+.cart_card .details_cartitem .cartCARD_head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity_holder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity_btns {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+}
+.quantity_btns img{
+    width: 100%;object-fit: cover;
+}
+.cart_greybtn {
+    background: white;
+}
+
+.cart_actionbtn {
+    background: #9747FF;
+    padding: 3px;
+}
+
+.bill {
+    padding: 20px;
+    width: 500px;
+    background: white;
+    overflow: scroll;
+}
+.addtoFAv , .removefrom{
+    min-width: 25px;
+    width: 25px;
+}
+.addtoFAv{
+    margin-top: 10px;
+}
+.itempricecart{
+    display: flex;
+    align-items: center;
+}
+.item_and_the_price_cart{
+    margin-bottom: 7px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.billbtnscart{
+    width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    margin-bottom: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+}
+.billbtn1{
+    background: #9747FF;
+    color: white;
+}
+.billbtn2{
+    background: #F3F7FA;
+    color: rgba(0, 0, 0, 0.576);
+}

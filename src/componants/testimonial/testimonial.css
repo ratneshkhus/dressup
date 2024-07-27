@@ -1,0 +1,51 @@
+#testimonial{
+    margin-top: 30px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tesimonial_inner{
+    width: 90vw;
+    height: fit-content;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+}
+.review_holder{
+    /* height: 100vh; */
+    width: 100%;
+    columns: 2;
+    column-rule: none;
+    column-gap: 20px;
+    position: relative;
+}
+.review{
+    break-inside: avoid;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: fit-content;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: inline-block;
+    gap: 15px;
+    position: relative;
+}
+.heading{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.review_contant{
+    margin-left: 7%;
+    width: 93%;
+    text-wrap: wrap;
+}
+.review_contant p{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}

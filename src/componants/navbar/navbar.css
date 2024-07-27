@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+nav{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo{
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 7px;
+}
+nav .logo span{
+    font-weight: 800;
+    color: #9A4AFF;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+.linksholder ul, .iconsbar{
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    font-weight: 600;
+}
+.iconsbar{
+    gap: 15px;
+}
+.iconsbar .loginbtn h4{
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: white;
+}
+.iconsbar .loginbtn{
+    width: auto;
+    display: grid;
+    padding: 3px 15px;
+    background: #9A4AFF;
+    border-radius: 10px;
+
+}
+.search_bar{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 30px;
+    height: 40px;
+    background: white;
+    box-shadow: 0 0 10px rgba(234, 234, 234, 0.692);
+    position: relative;
+
+}
+.searchicon{
+    position: absolute;
+    z-index: 1;
+}
+.search_bar input{
+    transform: translate(30px);
+    width: 120px;
+    outline: none;
+    border: none;
+}

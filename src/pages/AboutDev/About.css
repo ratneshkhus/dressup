@@ -1,0 +1,25 @@
+.aboutdev{
+    min-width: 100vw;
+    min-height: 100vh;
+    background:  #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 20px;
+}
+.devname{
+    position: relative;
+    color: white;
+}
+.devname h3{
+    font-size: 4rem;
+}
+.profiletype{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,142 @@
+.form_container_but_profile{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    position: relative;
+    z-index: 5;
+    padding: 20px 20px;
+}
+.forminputareas_but_profile input, .forminputareas_but_profile textarea{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    background: white;
+}
+.forminputareas_but_profile textarea{
+    resize: none;
+    width: 100%;
+}
+.forminputareas_but_profile input:focus,.forminputareas_but_profile textarea:focus{
+    outline: 2px solid #9B5FFC;
+}
+.formcontainer_but_profile{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 10px 20px;
+}
+
+.header_desgin_Of_profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.profile_circle{
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    background: white;
+    display: grid;
+    place-items: center;
+}
+.moreicon_profile{
+    border-radius: 20px;
+    min-width: 35px;
+    min-height: 35px;
+    display: grid;
+    place-items: center;
+}
+.moreicon_profile:hover{
+    background: white;
+}
+
+.ProfileMenuclose{
+    display: none;
+}
+.ProfileMenu{
+    transform: translate(75px,22px);
+    position: absolute;
+    background: white;
+    border-radius: 15px;
+    padding: 7px 7px 2px;
+    display: inline-block;
+    height: fit-content;
+    animation: profilemenuani 1s forwards ease;
+    opacity: 0;
+}
+@keyframes profilemenuani{
+    0%{
+        opacity: 0;
+        transform: translate(75px,50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(75px,22px);
+    }
+}
+.ProfileMenu-options{
+    position: relative;
+    background: #F6F6F6;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.tableSection{
+    width: 90%;
+    height: fit-content;
+}
+.holder_Table {
+    max-height: 10rem;
+    min-height: fit-content;
+    overflow-y: scroll;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    width: 100%;
+    background: white;
+}
+.holder_Table::-webkit-scrollbar {
+    width: 7px;
+  }
+
+.holder_Table::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: white;
+  }
+   
+  .holder_Table::-webkit-scrollbar-thumb {
+    background: #9B5FFC; 
+    border-radius: 10px;
+  }
+table{
+    text-align: left;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+}
+td{
+    padding: 7px 7px;
+    border-radius: 5px;
+    background: #f5f5f5;
+}
+td:hover{
+    background: #9B5FFC;
+    color: white;
+}
+
+.eyeof_password{
+    position: absolute;
+    right: 10px;
+    transform: translateY(-25px);
+}

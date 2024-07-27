@@ -1,0 +1,108 @@
+/*=========================*/
+.banner_offer_design{
+    white-space: none;
+    margin-top: 20px;
+    position: relative;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.bg_BIG_imgs{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.img_holder_of_bg_big{
+    background-repeat: no-repeat;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    border-radius: 40px;
+    background: #000;    
+    overflow: hidden;
+}
+.img_holder_of_bg_big img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+.design_overlay_and_link{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    width: 100px;
+    height: 100px;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.design_overlay_and_link_circle{
+    background: white;
+    border-radius: 100px;
+    display: grid;
+    place-items: center;
+}
+.design_overlay{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translate(270px);
+    width: 240px;
+    height: 250px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 2px solid white;
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+.people_showing{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+.pcircle{
+    width: 40px;
+    height: 40px;
+    border-radius: 60px;
+    background: #000;
+    overflow: hidden;
+}
+.people_showing span{
+    font-size: 12px;
+    text-wrap: nowrap;
+}
+.pc2{
+    transform: translate(-20px);
+}
+.pc3{
+    transform: translate(-40px);
+}
+.onclickeditbtns_for_images_and_deatials{
+    width: 90vw;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+}
+.image_choice{
+    overflow: hidden;
+    width: 130px;
+    height: 70px;
+    border-radius: 200px;
+    background: #000;
+}
+#cardsection{
+    margin-top: 70px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+}

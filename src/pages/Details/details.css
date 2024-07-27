@@ -1,0 +1,146 @@
+
+  .main_wrapper_for_details_page {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .otherimg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .imgbox_for_details {
+    box-shadow: 0px 0px 10px rgb(211, 211, 211);
+    border-radius: 15px;
+    width: 450px;
+    object-fit: cover;
+    animation: slideup 0.8s forwards;
+    overflow: hidden;
+  }
+  
+  .imgbox::-webkit-scrollbar,
+  .otherimg::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 17px;
+  }
+  
+  .box1 {
+    grid-row: 1;
+    grid-row-end: 5;
+    height: 580px;
+    border-radius: 17px;
+  }
+  
+  .box2 {
+    grid-row: 2;
+    grid-row-end: 8;
+    height: 100%;
+    animation-duration: 0.9s;
+    border-radius: 17px;
+  }
+  
+  .box3 {
+    grid-row: 5;
+    grid-row-end: 10;
+    height: 600px;
+    border-radius: 17px;
+  }
+  .box4 {
+    grid-row: 8;
+    grid-row-end: 15;
+    height: 600px;
+    border-radius: 17px;
+  }
+  
+  @keyframes slideup {
+    0% {
+      opacity: 0px;
+      transform: translateY(100%);
+    }
+  
+    100% {
+      opacity: 1px;
+      transform: translateY(0%);
+    }
+  }
+
+  .tags {
+    text-wrap: nowrap;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: black;
+    height: fit-content;
+    overflow: hidden;
+}
+  
+  .full_details {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .colorbox_allcol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .collboxes {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .colbox {
+    width: 80px;
+    height: 80px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .colbox::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .colbox img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.2;
+  }
+  
+  .all_sizeholder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  
+  .sizeboxs {
+    text-align: center;
+    width: 80px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0px 0px 10px rgb(211, 211, 211);
+    margin-bottom: 5px;
+  }
+  
+  .addtocartbtn{
+    background: #9A4AFF;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: white;
+  }
