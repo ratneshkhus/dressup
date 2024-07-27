@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import "./details.css"
 
 import { jwtDecode } from "jwt-decode";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Details() {
@@ -13,8 +15,6 @@ export default function Details() {
 
     console.log(userId);
 
-
-    // console.log(id);
     const [detaldata, setdetaldata] = useState({
         clothname: '',
         imgurl: [],
@@ -53,18 +53,25 @@ export default function Details() {
         }
     }
     // console.log(clothprice);
-
-
     const handlecart = (e) => {
         e.preventDefault()
-        console.log("clicked" + userId);
-        // axios.post('http://localhost:3001/cart', {id})addcart
+
+        toast.success('Item added to Cart!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+
+        // console.log("clicked" + userId);
         axios.post('http://localhost:3001/addcart', { userId,id,clothprice })
             .then(result => console.log(result.data))
             .catch(err => console.log(err));
     }
-    // console.log(detaldata.imgurl);
-
     return (
         <>
             <div className="main_wrapper_for_details_page">
@@ -110,6 +117,7 @@ export default function Details() {
                     </div>
 
                     <div style={{ marginTop: "20px" }}>
+                    <ToastContainer />
                         <span className='addtocartbtn' onClick={handlecart}>Add to cart</span>
                     </div>
                 </div>

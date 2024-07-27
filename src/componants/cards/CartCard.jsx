@@ -4,26 +4,23 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { MdCurrencyRupee } from "react-icons/md";
 import axios from 'axios';
-import { GlobalContext } from '../context/Contex'; // Ensure the path is correct
 
-export default function CartCard({ cartdata, onRemove }) {
-    // const { getQuantity, setGetQuantity } = useContext(GlobalContext);
+export default function CartCard({ cartdata, onRemove, onQuantityChange  }) {
     const [quantity, setQuantity] = useState(cartdata.quantity);
     const maxStock = cartdata.cloth.clothsStock;
 
-    // useEffect(() => {
-    //     setGetQuantity(quantity);
-    // }, [quantity, setGetQuantity]);
-
     const increaseQuantity = () => {
         if (quantity < maxStock) {
+            const newQuantity = quantity + 1;
             setQuantity(quantity + 1);
+            onQuantityChange(cartdata.cloth._id, newQuantity);
         }
     };
-
     const decreaseQuantity = () => {
         if (quantity > 1) {
+            const newQuantity = quantity - 1;
             setQuantity(quantity - 1);
+            onQuantityChange(cartdata.cloth._id, newQuantity);
         }
     };
 

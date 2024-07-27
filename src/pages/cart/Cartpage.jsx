@@ -35,24 +35,42 @@ export default function Cart() {
 
             return {
                 ...prevItems,
-                products: prevItems.products.filter(product => 
-                    {
-                        product.cloth._id !== productId;
-                        settotalamount(totalamout - product.cloth.clothprice);
-                    }
+                products: prevItems.products.filter(product => {
+                    product.cloth._id !== productId;
+                    settotalamount(totalamout - product.cloth.clothprice);
+                }
                 )
             };
         });
     };
 
-    // console.log(cartitems);
+    const handleQuantityChange = (productId, newQuantity) => {
+        setcartitems((prevItems) => {
+            const updatedProducts = prevItems.products.map(product =>
+                product.cloth._id === productId ? { ...product, quantity: newQuantity } : product
+            );
 
+            const newTotal = updatedProducts.reduce((sum, product) => {
+                return sum + (product.cloth.clothprice * product.quantity);
+            }, 150); // Adding delivery charge
+
+            settotalamount(newTotal);
+
+            return {
+                ...prevItems,
+                products: updatedProducts
+            };
+        });
+    };
     return (
         <>
             <div className="cartWarpper">
                 <div className="cart_card_scroller">
                     {cartitems.products && cartitems.products.map((product, key) => (
-                        <CartCard key={key} cartdata={product} onRemove={handleRemove} />
+                        <CartCard key={key}
+                            cartdata={product}
+                            onRemove={handleRemove}
+                            onQuantityChange={handleQuantityChange} />
                     ))}
                 </div>
 
@@ -85,7 +103,9 @@ export default function Cart() {
                         </h4>
                     </div>
 
-                    <div className="billbtnscart billbtn1" style={{ marginTop: "30px" }}>check out</div>
+                    <div 
+                    className="billbtnscart billbtn1" 
+                    style={{ marginTop: "30px" }}>check out</div>
                 </div>
             </div>
         </>
