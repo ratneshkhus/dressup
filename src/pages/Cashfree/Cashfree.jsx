@@ -33,22 +33,6 @@ function App() {
     }
   }
 
-  const verifyPayment = async () => {
-    try {
-      
-      let res = await axios.post("http://localhost:3001/verify", {
-        orderId: orderId
-      })
-
-      if(res && res.data){
-        alert("payment verified")
-      }
-
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   const handleClick = async (e) => {
     e.preventDefault()
     try {
@@ -62,7 +46,6 @@ function App() {
       cashfree.checkout(checkoutOptions).then((res) => {
         console.log("payment initialized")
 
-        verifyPayment(orderId)
       })
 
 

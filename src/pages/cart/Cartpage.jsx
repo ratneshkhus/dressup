@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CartCard from '../../componants/cards/CartCard';
 import { MdCurrencyRupee } from "react-icons/md";
+import {load} from '@cashfreepayments/cashfree-js'
 import "./cart.css";
 import axios from 'axios';
 
@@ -63,60 +64,55 @@ export default function Cart() {
         });
     };
     
+    let cashfree;
+
+  let insitialzeSDK = async function () {
+
+    cashfree = await load({
+      mode: "sandbox",
+    })
+  }
+
+  insitialzeSDK()
+
+  const [orderId, setOrderId] = useState("")
+
+
+
   const getSessionId = async () => {
     try {
-      let res = await axios.get("http://localhost:3001/payment")
-      
-      if(res.data && res.data.payment_session_id){
-
-        console.log(res.data)
-        setOrderId(res.data.order_id)
-        return res.data.payment_session_id
+      const res = await axios.post("http://localhost:3001/currentorder")
+      console.log(res);
+      if (res) {
+        window.open(res.data.paymentLink,'_blank')
       }
-
 
     } catch (error) {
       console.log(error)
     }
   }
-    const verifyPayment = async () => {
-        try {
-          
-          let res = await axios.post("http://localhost:3001/verify", {
-            orderId: orderId
-          })
-    
-          if(res && res.data){
-            alert("payment verified")
-          }
-    
-        } catch (error) {
-          console.log(error)
-        }
+
+  const handleClick = async (e) => {
+    e.preventDefault()
+    try {
+
+      let sessionId = await getSessionId()
+      let checkoutOptions = {
+        paymentSessionId : sessionId,
+        redirectTarget:"_modal",
       }
 
-    const handlecasefree = async (e) =>{
-        e.preventDefault()
-        try {
-    
-          let sessionId = await getSessionId()
-          let checkoutOptions = {
-            paymentSessionId : sessionId,
-            redirectTarget:"_modal",
-          }
-    
-          cashfree.checkout(checkoutOptions).then((res) => {
-            console.log("payment initialized")
-    
-            verifyPayment(orderId)
-          })
-    
-    
-        } catch (error) {
-          console.log(error)
-        }
+      cashfree.checkout(checkoutOptions).then((res) => {
+        console.log("payment initialized")
+
+      })
+
+
+    } catch (error) {
+      console.log(error)
     }
 
+  } 
     return (
         <>
             <div className="cartWarpper">
@@ -162,7 +158,7 @@ export default function Cart() {
                     className="billbtnscart billbtn1" 
                     style={{ marginTop: "30px" }}
                     
-                    onClick={handlecasefree}>check out</div>
+                    onClick={handleClick}>check out</div>
                 </div>
             </div>
         </>

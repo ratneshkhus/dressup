@@ -24,8 +24,8 @@ export default function AboutDev() {
                     </div>
                 </div>
                 <video 
-                // src={vid}
-                src="https://www.dropbox.com/scl/fi/gktjdcr7d5q3s2xuvcqf2/3dvid.mp4?rlkey=punitfeo4os1m7079ro2phasj&st=ivsxqtxp&dl=0" 
+                src={vid}
+                // src="https://www.dropbox.com/scl/fi/gktjdcr7d5q3s2xuvcqf2/3dvid.mp4?rlkey=punitfeo4os1m7079ro2phasj&st=ivsxqtxp&dl=1" 
                 autoPlay loop muted>
                     Your browser does not support the video tag.
                 </video>
