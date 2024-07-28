@@ -88,13 +88,13 @@
     width: 250px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
   
   .colorbox_allcol {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
   
   .collboxes {
@@ -137,10 +137,30 @@
     box-shadow: 0px 0px 10px rgb(211, 211, 211);
     margin-bottom: 5px;
   }
+  .selectedsize {
+    text-align: center;
+    width: 80px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #9A4AFF;
+    color: white;
+    margin-bottom: 5px;
+  }
   
   .addtocartbtn{
     background: #9A4AFF;
     padding: 10px 15px;
     border-radius: 20px;
     color: white;
+  }
+  .headerofdetails{
+    display: flex;
+    flex-direction: column;
+  }
+  .tagsATdetails{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
   }

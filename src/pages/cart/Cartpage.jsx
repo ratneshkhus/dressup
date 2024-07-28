@@ -62,6 +62,61 @@ export default function Cart() {
             };
         });
     };
+    
+  const getSessionId = async () => {
+    try {
+      let res = await axios.get("http://localhost:3001/payment")
+      
+      if(res.data && res.data.payment_session_id){
+
+        console.log(res.data)
+        setOrderId(res.data.order_id)
+        return res.data.payment_session_id
+      }
+
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+    const verifyPayment = async () => {
+        try {
+          
+          let res = await axios.post("http://localhost:3001/verify", {
+            orderId: orderId
+          })
+    
+          if(res && res.data){
+            alert("payment verified")
+          }
+    
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+    const handlecasefree = async (e) =>{
+        e.preventDefault()
+        try {
+    
+          let sessionId = await getSessionId()
+          let checkoutOptions = {
+            paymentSessionId : sessionId,
+            redirectTarget:"_modal",
+          }
+    
+          cashfree.checkout(checkoutOptions).then((res) => {
+            console.log("payment initialized")
+    
+            verifyPayment(orderId)
+          })
+    
+    
+        } catch (error) {
+          console.log(error)
+        }
+    }
+
     return (
         <>
             <div className="cartWarpper">
@@ -105,7 +160,9 @@ export default function Cart() {
 
                     <div 
                     className="billbtnscart billbtn1" 
-                    style={{ marginTop: "30px" }}>check out</div>
+                    style={{ marginTop: "30px" }}
+                    
+                    onClick={handlecasefree}>check out</div>
                 </div>
             </div>
         </>

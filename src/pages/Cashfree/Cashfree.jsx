@@ -22,15 +22,11 @@ function App() {
 
   const getSessionId = async () => {
     try {
-      let res = await axios.get("http://localhost:3001/payment")
-      
-      if(res.data && res.data.payment_session_id){
-
-        console.log(res.data)
-        setOrderId(res.data.order_id)
-        return res.data.payment_session_id
+      const res = await axios.post("http://localhost:3001/currentorder")
+      console.log(res);
+      if (res) {
+        window.open(res.data.paymentLink,'_blank')
       }
-
 
     } catch (error) {
       console.log(error)
