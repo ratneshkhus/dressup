@@ -22,7 +22,7 @@ function App() {
 
   const getSessionId = async () => {
     try {
-      const res = await axios.post("http://localhost:3001/currentorder")
+      const res = await axios.post("https://codsoft-dressupproject.vercel.app/currentorder")
       console.log(res);
       if (res) {
         window.open(res.data.paymentLink,'_blank')

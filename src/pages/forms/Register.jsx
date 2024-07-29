@@ -13,7 +13,7 @@ export default function Register() {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/register', {username,password,email,address,mobile})
+        axios.post('https://codsoft-dressupproject.vercel.app/register', {username,password,email,address,mobile})
         .then(result => console.log(result.data))
         .catch(err => console.log(err));
     }

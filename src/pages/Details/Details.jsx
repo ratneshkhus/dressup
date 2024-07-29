@@ -45,7 +45,7 @@ export default function Details() {
 
     const selectedcloth = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/details/${id}`);
+            const response = await axios.get(`https://codsoft-dressupproject.vercel.app/details/${id}`);
             setdetaldata(response.data);
             setclothprice(response.data.clothprice);
         } catch (e) {
@@ -68,7 +68,7 @@ export default function Details() {
         });
 
         // console.log("clicked" + userId);
-        axios.post('http://localhost:3001/addcart', { userId, id, clothprice, selectedSize })
+        axios.post('https://codsoft-dressupproject.vercel.app/addcart', { userId, id, clothprice, selectedSize })
             .then(result => console.log(result.data))
             .catch(err => console.log(err));
     }

@@ -15,7 +15,7 @@ export default function Cart() {
     const loadOrderdata = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:3001/orderdataTable', {
+            const response = await axios.get('https://codsoft-dressupproject.vercel.app/orderdataTable', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -82,7 +82,7 @@ export default function Cart() {
         try {
             const token = localStorage.getItem('token');
 
-            const res = await axios.post("http://localhost:3001/currentorder",{totalamout},{
+            const res = await axios.post("https://codsoft-dressupproject.vercel.app/currentorder",{totalamout},{
                 headers: {
                     Authorization: `Bearer ${token}`
                 }   
@@ -104,7 +104,7 @@ export default function Cart() {
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post('http://localhost:3001/createOrder',{}, {
+            const response = await axios.post('https://codsoft-dressupproject.vercel.app/createOrder',{}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

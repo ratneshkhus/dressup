@@ -24,7 +24,7 @@ export default function Profile() {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:3001/profile', {
+        const response = await axios.get('https://codsoft-dressupproject.vercel.app/profile', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -42,7 +42,7 @@ export default function Profile() {
   const loadOrderdata = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3001/orderdatahistory', {
+      const response = await axios.get('https://codsoft-dressupproject.vercel.app/orderdatahistory', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -75,7 +75,7 @@ export default function Profile() {
   const handleUpdate = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put('http://localhost:3001/updateuser', user, {
+      const response = await axios.put('https://codsoft-dressupproject.vercel.app/updateuser', user, {
         headers: {
           Authorization: `Bearer ${token}`
         }

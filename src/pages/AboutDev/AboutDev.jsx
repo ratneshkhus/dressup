@@ -128,6 +128,12 @@ export default function AboutDev() {
                     </p>
                     <p>
                         <span className='boldone'>
+                            Github
+                        </span> <br />
+                        github almost replaced my whole backend code.. and till its not updating 😥 idk what will happed
+                    </p>
+                    <p>
+                        <span className='boldone'>
                             api
                         </span> <br />
                         its was new concept for me.. so it was hard in beginner

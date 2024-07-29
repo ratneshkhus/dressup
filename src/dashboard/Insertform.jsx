@@ -15,7 +15,7 @@ export default function Insertform() {
 
     const handlesubmit = (e) =>{
         e.preventDefault()
-        axios.post('http://localhost:3001/insertproducts', 
+        axios.post('https://codsoft-dressupproject.vercel.app/insertproducts', 
             {clothname,imgurl:imgurl.split(','),clothprice,material,clothsize:clothsize.split(','),clothcolor,clothsStock,category:category.split(','),description})
             .then(result => console.log(result.data))
             .catch(err => console.log(err))

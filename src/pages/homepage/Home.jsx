@@ -27,18 +27,21 @@ export default function Home() {
   const [images, setImages] = useState([
     {
       imageUrl: c1,
-      price: '$200',
-      description: 'Product 1 description'
+      price: '200',
+      description: 'Product 1 description',
+      lnk: ''
     },
     {
       imageUrl: c2,
-      price: '$300',
-      description: 'Product 2 description'
+      price: '300',
+      description: 'Product 2 description',
+      lnk: ''
     },
     {
       imageUrl: c3,
-      price: '$400',
-      description: 'Product 3 description'
+      price: '400',
+      description: 'Product 3 description',
+      lnk: ''
     }
   ]);
 
@@ -56,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     const fetchRandomClothes = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/randomWomenClothes');
+        const response = await axios.get('https://codsoft-dressupproject.vercel.app/randomWomenClothes');
         setProducts(response.data);
         console.log(response.data);
       } catch (err) {

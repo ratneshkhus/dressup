@@ -29,7 +29,7 @@ export default function CartCard({ cartdata, onRemove, onQuantityChange }) {
     const removeProduct = async () => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete('http://localhost:3001/removeProduct', {
+            await axios.delete('https://codsoft-dressupproject.vercel.app/removeProduct', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },

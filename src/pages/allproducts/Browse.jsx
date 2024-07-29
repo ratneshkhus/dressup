@@ -23,7 +23,7 @@ export default function Browse() {
     useEffect(() => {
         const fetchSearchResults = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/search`, {
+                const response = await axios.get(`https://codsoft-dressupproject.vercel.app/search`, {
                     params: { query }
                 });
                 setProducts(response.data);
@@ -35,7 +35,7 @@ export default function Browse() {
         fetchSearchResults();
     }, [query]);
     const tags = [
-        "jeans", "tshirt", "shirt", "night-outfit", "suits", "shorts", "men", "women", "kids"
+        "jeans", "tshirt", "shirt", "night", "suits", "shorts", "men", "women", "kids"
     ];
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export default function Browse() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/browse/${cat}`);
+            const response = await axios.get(`https://codsoft-dressupproject.vercel.app/browse/${cat}`);
             setcatproducts(response.data);
             // console.log(catproducts);
         } catch (err) {
@@ -67,7 +67,7 @@ export default function Browse() {
 
     const getcloth = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/fetchcolths');
+            const response = await axios.get('https://codsoft-dressupproject.vercel.app/fetchcolths');
             setProducts(response.data);
             // console.log(response.data);
 
