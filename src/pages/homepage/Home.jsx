@@ -61,7 +61,7 @@ export default function Home() {
       try {
         const response = await axios.get('https://codsoft-dressupproject.vercel.app/randomWomenClothes');
         setProducts(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (err) {
         console.error('Error fetching random women clothes:', err);
       }
