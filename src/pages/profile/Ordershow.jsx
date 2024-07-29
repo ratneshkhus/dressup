@@ -15,7 +15,7 @@ export default function Ordershow({ orderdata }) {
     
     return (
         <>
-        {orderdata && orderdata.map((a,key)=>{
+        {/* {orderdata && orderdata.map((a,key)=>{
             console.log(a.products);
             a.products.map((b,key)=>{
                 console.log(b.cloth);
@@ -29,7 +29,7 @@ export default function Ordershow({ orderdata }) {
                 <td>{orderdata.orderstatus}</td>
             </tr>
             })
-        })}
+        })} */}
             {/* {orderdata.map((product, index) => (
                
             ))} */}

@@ -38,7 +38,7 @@ export default function Cart() {
                 products: prevItems.products.filter(product => {
                     product.cloth._id !== productId;
                     settotalamount(totalamout - product.cloth.clothprice);
-        loadOrderdata();
+                    loadOrderdata();
 
                 }
                 )
@@ -82,10 +82,10 @@ export default function Cart() {
         try {
             const token = localStorage.getItem('token');
 
-            const res = await axios.post("https://codsoft-dressupproject.vercel.app/currentorder",{totalamout},{
+            const res = await axios.post("https://codsoft-dressupproject.vercel.app/currentorder", { totalamout }, {
                 headers: {
                     Authorization: `Bearer ${token}`
-                }   
+                }
             })
             console.log(res);
             if (res) {
@@ -96,32 +96,32 @@ export default function Cart() {
             console.log(error)
         }
     }
-    
+
     const handleClick = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-    
+
         try {
             const token = localStorage.getItem('token');
             console.log(token);
-            const response = await axios.post('https://codsoft-dressupproject.vercel.app/createOrder',{}, {
+            const response = await axios.post('https://codsoft-dressupproject.vercel.app/createOrder', {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
             // log("hhhh")
             if (response.status === 200) {
-            const token = localStorage.getItem('token');
+                const token = localStorage.getItem('token');
 
                 console.log('Order created successfully:', response.data);
-    
+
                 // Proceed with payment
                 let sessionId = await getSessionId();
                 let checkoutOptions = {
                     paymentSessionId: sessionId,
                     redirectTarget: "_modal",
                 };
-    
+
                 cashfree.checkout(checkoutOptions).then((res) => {
                     console.log("payment initialized");
                 });
@@ -132,8 +132,8 @@ export default function Cart() {
             console.error('Error creating order:', error);
         }
     };
-    
-    
+
+
     return (
         <>
             <div className="cartWarpper">

@@ -5,7 +5,7 @@ import axios from "axios"
 import { FiEdit2, FiEyeOff, FiLogOut, FiMoreVertical } from "react-icons/fi";
 import { FaEye, FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineCancel } from "react-icons/md";
-const Ordershow = React.lazy(() => import('./Ordershow'));
+// const Ordershow = React.lazy(() => import('./Ordershow'));
 import LoaderAni from '../../componants/LoaderAni';
 
 export default function Profile() {
@@ -220,9 +220,9 @@ export default function Profile() {
               </thead>
               <tbody>
 
-                <Suspense fallback={<LoaderAni />}>
+                {/* <Suspense fallback={<LoaderAni />}>
                     <Ordershow orderdata={orderdata} />
-                </Suspense>
+                </Suspense> */}
               </tbody>
             </table>
           </div>
