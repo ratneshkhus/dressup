@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hero from '../../componants/herosection/Hero'
 import { Link } from 'react-router-dom'
 import "./Home.css"
@@ -14,8 +14,9 @@ import user1 from './cloths/user1.jpeg'
 import pfp from './cloths/poses-for-pictures.jpg'
 import Testimonial from '../../componants/testimonial/Testimonial';
 import LoaderAni from '../../componants/LoaderAni'
+import Card from '../../componants/cards/Card'
 
-const Card = React.lazy(() => import('../../componants/cards/Card'))
+
 
 export default function Home() {
   const [main, setMain] = useState({
@@ -128,11 +129,9 @@ export default function Home() {
       <section id='cardsection' >
         <h1>Fashion brands</h1>
         <div className="card_container" style={{ width: "100%" }}>
-          <Suspense fallback={<LoaderAni />}>
             {Products.map((Product, key) => {
               return <Card product={Product} key={key} />
             })}
-          </Suspense>
         </div>
         <div
           style={{
