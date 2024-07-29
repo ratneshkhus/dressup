@@ -129,9 +129,9 @@ export default function Home() {
       <section id='cardsection' >
         <h1>Fashion brands</h1>
         <div className="card_container" style={{ width: "100%" }}>
-            {Products.map((Product, key) => {
+            {/* {Products.map((Product, key) => {
               return <Card product={Product} key={key} />
-            })}
+            })} */}
         </div>
         <div
           style={{
