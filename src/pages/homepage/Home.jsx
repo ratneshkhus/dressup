@@ -104,8 +104,8 @@ export default function Home() {
         </div>
         <div className="design_overlay">
           <div>
-            <h3>namehere</h3>
-            <h4>price</h4>
+            <h3>mens wear</h3>
+            <h4>500-1500rs</h4>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, harum.</p>
           <div className="people_showing">
