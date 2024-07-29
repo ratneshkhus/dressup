@@ -35,3 +35,35 @@
     flex-direction: column;
     gap: 20px;
 }
+.qutionssection{
+    margin-top: 30px;
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    flex-direction: column;
+    gap: 15px;
+    text-wrap: wrap;
+}
+.boldone{
+    margin-left: 5px;
+    color: #781de8;
+    font-weight: 700;
+}
+.linksagain{
+    width: fit-content;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.linksagain a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hold_my_prob{
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    flex-direction: column;
+    gap: 10px;
+}

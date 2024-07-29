@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import "./profile.css"
 import axios from "axios"
 
 import { FiEdit2, FiEyeOff, FiLogOut, FiMoreVertical } from "react-icons/fi";
 import { FaEye, FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineCancel } from "react-icons/md";
-import Ordershow from './Ordershow';
+const Ordershow = React.lazy(() => import('./Ordershow'));
 import LoaderAni from '../../componants/LoaderAni';
 
 export default function Profile() {
-  const token = localStorage.getItem('token');
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [profilemenu, setprofilemenu] = useState(false);
   const [profileupdate, setprofileupdate] = useState(false);
+  const [orderdata, setOrderdata] = useState([]);
 
   const [user, setUser] = useState({});
 
@@ -36,7 +36,24 @@ export default function Profile() {
       }
     };
     fetchUser();
+    loadOrderdata();
   }, []);
+
+  const loadOrderdata = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await axios.get('http://localhost:3001/orderdatahistory', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setOrderdata(response.data);
+      console.log(response.data);
+    } catch (err) {
+      console.error('Error fetching user information:', err);
+    }
+  };
+  // console.log(orderdata.products);
 
   const logout = () => {
     localStorage.removeItem('token')
@@ -189,7 +206,26 @@ export default function Profile() {
           </form>
         </div>
         <section className="tableSection">
-          <Ordershow />
+          <div className="holder_Table">
+            <h3>Order History</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Order</th>
+                  <th>Date</th>
+                  <th>Total Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <Suspense fallback={<LoaderAni />}>
+                    <Ordershow orderdata={orderdata} />
+                </Suspense>
+              </tbody>
+            </table>
+          </div>
         </section>
       </section>
     </>

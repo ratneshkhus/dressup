@@ -121,9 +121,17 @@ export default function Footer() {
                 </div>
 
                 <h1 className='heading_footer'>Dress up</h1>
+                <div className="aboutdev_links">
                 <Link to={'/aboutdev'}>
                 <span style={{color : 'white'}}>about this project</span>
                 </Link>
+                <Link to={'/aboutdev'}>
+                <span style={{color : 'white'}}>about dev?</span>
+                </Link>
+                <Link to={'/aboutdev'}>
+                <span style={{color : 'white'}}>what i learned</span>
+                </Link>
+                </div>
             </footer>
         </>
     )

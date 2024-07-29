@@ -9,16 +9,6 @@ export default function Login() {
   const [email, setemail] = useState()
   const [password, setpassword] = useState()
 
-
-  // const handlesubmit = (e) => {
-  //   e.preventDefault()
-  //   const response = axios.post('http://localhost:3001/login', {email , password})
-  //     .then(result => {
-  //       console.log(result.data)
-  //       localStorage.setItem('token' , result.data.token)
-  //     })
-  //     .catch(err => console.log(err));
-  // }
   const handlesubmit = async (e) => {
     e.preventDefault()
     try {

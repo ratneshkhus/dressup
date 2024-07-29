@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import Hero from '../../componants/herosection/Hero'
 import { Link } from 'react-router-dom'
 import "./Home.css"
 import axios from "axios"
 import { FaArrowRight } from "react-icons/fa";
 import starsvg from '../../svgs/Star_black.svg';
-import Card from '../../componants/cards/Card'
+
 import c1 from './cloths/casual.png'
 import c3 from './cloths/c3.jpg'
 import c2 from './cloths/c2.jpg'
@@ -14,6 +14,8 @@ import user1 from './cloths/user1.jpeg'
 import pfp from './cloths/poses-for-pictures.jpg'
 import Testimonial from '../../componants/testimonial/Testimonial';
 import LoaderAni from '../../componants/LoaderAni'
+
+const Card = React.lazy(() => import('../../componants/cards/Card'))
 
 export default function Home() {
   const [main, setMain] = useState({
@@ -123,10 +125,11 @@ export default function Home() {
       <section id='cardsection' >
         <h1>Fashion brands</h1>
         <div className="card_container" style={{ width: "100%" }}>
-          {Products ?
-            Products.map((Product, key) => {
+          <Suspense fallback={<LoaderAni />}>
+            {Products.map((Product, key) => {
               return <Card product={Product} key={key} />
-            }) : <LoaderAni />}
+            })}
+          </Suspense>
         </div>
         <div
           style={{

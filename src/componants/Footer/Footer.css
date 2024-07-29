@@ -53,3 +53,8 @@ ul li h4{
     align-items: center;
     transform: translate(100%);
 }
+.aboutdev_links{
+    display: flex;
+    gap: 25px;
+    transform: translate(10px,20px);
+}

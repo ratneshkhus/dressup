@@ -2,60 +2,37 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import LoaderAni from '../../componants/LoaderAni';
 
-export default function Ordershow() {
-    const [orderdata, setOrderdata] = useState(null);
-
-    useEffect(() => {
-        const loadOrderdata = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:3001/orderdataTable', {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                setOrderdata(response.data);
-                console.log(response.data);
-            } catch (err) {
-                console.error('Error fetching user information:', err);
-            }
-        };
-        loadOrderdata();
-    }, []);
-
+export default function Ordershow({ orderdata }) {
     if (!orderdata) {
         return <LoaderAni />;
     }
-
+    const [productshi,setproductshi] = useState([])
+    useEffect(()=>{
+        orderdata.map((a,key)=>{
+            setproductshi(a.products);
+        })
+    },[])
+    
     return (
         <>
-            <div className="holder_Table">
-                <h3>Order History</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Order</th>
-                            <th>Date</th>
-                            <th>Total Price</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {orderdata.products.map((product, index) => (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td style={{ width: "65%" }}>
-                                    <div>{product.cloth.clothname} (x{product.quantity})</div>
-                                </td>
-                                <td>{new Date(orderdata.createdAt).toLocaleDateString()}</td>
-                                <td>{product.cloth.clothprice * product.quantity}</td>
-                                <td>{orderdata.orderstatus}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+        {orderdata && orderdata.map((a,key)=>{
+            console.log(a.products);
+            a.products.map((b,key)=>{
+                console.log(b.cloth);
+                <tr key={key}>
+                <td>{key + 1}</td>
+                <td style={{ width: "65%" }}>
+                    <div>{b.cloth.clothname} (x{a.products.quantity})</div>
+                </td>
+                <td>{new Date(orderdata.createdAt).toLocaleDateString()}</td>
+                <td>{a.products.clothprice * a.products.quantity}</td>
+                <td>{orderdata.orderstatus}</td>
+            </tr>
+            })
+        })}
+            {/* {orderdata.map((product, index) => (
+               
+            ))} */}
         </>
     );
 }

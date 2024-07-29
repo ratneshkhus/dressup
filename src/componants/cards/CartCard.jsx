@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 export default function CartCard({ cartdata, onRemove, onQuantityChange }) {
     const [quantity, setQuantity] = useState(cartdata.quantity);
     const maxStock = cartdata.cloth.clothsStock;
+    console.log(cartdata);
 
     const increaseQuantity = () => {
         if (quantity < maxStock) {
@@ -45,7 +46,7 @@ export default function CartCard({ cartdata, onRemove, onQuantityChange }) {
     return (
         <>
             <div className="cart_card">
-                <Link to={`/details/${cartdata._id}`}>
+                <Link to={`/details/${cartdata.cloth._id}`}>
                     <div className="imgholde_cart">
                         <img src={cartdata.cloth.imgurl[0]} alt={cartdata.cloth.clothname} />
                     </div>

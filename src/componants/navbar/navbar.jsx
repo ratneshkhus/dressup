@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { Link } from "react-router-dom"
+import { Navigate } from 'react-router-dom';
 import { LuShoppingCart } from "react-icons/lu";
 import { MdSearch } from "react-icons/md";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -8,14 +9,20 @@ import "./navbar.css"
 export default function Navbar() {
 
     const [istoken, setistoken] = useState(false)
+    const [searchitem, setsearchitem] = useState('')
+    // console.log(searchitem);
     useEffect(() => {
         if (localStorage.getItem('token')) {
             setistoken(true);
         }
     }, []);
     const handleExploreAllClick = (e,param) => {
-        e.preventDefault(); // Prevent the default link behavior
-        window.location.href = `/browse/${param}`; // Force a page reload
+        e.preventDefault();
+        window.location.href = `/browse/${param}`;
+    };
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        window.location.href = `/browse/${searchitem}`;
     };
     return (
         <nav>
@@ -36,7 +43,7 @@ export default function Navbar() {
                         <Link to={`/browse/kids`} onClick={(e) => handleExploreAllClick(e, 'kids')}>kids</Link>
                     </li>
                     <li>
-                        <Link to={`/browse`} >Explore</Link>
+                        <Link to={`/browse`} onClick={(e) => handleExploreAllClick(e, '')}>Explore</Link>
                     </li>
                     <li>
                         <Link to={`/aboutdev`}>Aboutdev</Link>
@@ -44,9 +51,9 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="iconsbar">
-                <form action="" method='get' className='search_bar'>
+                <form onSubmit={handleSearchSubmit} className='search_bar'>
                     <MdSearch fontSize={"1.5rem"} className='searchicon' />
-                    <input type="text" name="search" placeholder="search" />
+                    <input type="text" name="search" placeholder="search" onChange={e => setsearchitem(e.target.value)}/>
                 </form>
                 <Link to={`/cart`}>
                     <LuShoppingCart fontSize={"1.5rem"} />

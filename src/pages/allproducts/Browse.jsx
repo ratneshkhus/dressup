@@ -17,6 +17,23 @@ export default function Browse() {
 
     const [maxprice, setmaxprice] = useState();
     const { cat } = useParams()
+    
+    const { query } = useParams();
+
+    useEffect(() => {
+        const fetchSearchResults = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3001/search`, {
+                    params: { query }
+                });
+                setProducts(response.data);
+            } catch (error) {
+                console.error('Error fetching search results:', error);
+            }
+        };
+
+        fetchSearchResults();
+    }, [query]);
     const tags = [
         "jeans", "tshirt", "shirt", "night-outfit", "suits", "shorts", "men", "women", "kids"
     ];
