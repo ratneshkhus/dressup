@@ -60,6 +60,10 @@ export default function CartCard({ cartdata, onRemove, onQuantityChange }) {
                                 <MdCurrencyRupee />
                                 {cartdata.cloth.clothprice}
                             </h3>
+                            <h3 className="itempricecart">
+                                size : 
+                                {cartdata.selectedSize}
+                            </h3>
                         </div>
                         <div className="cartCARD_head">
                             <div className="quantity_holder">

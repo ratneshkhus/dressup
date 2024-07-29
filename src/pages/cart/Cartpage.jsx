@@ -22,7 +22,7 @@ export default function Cart() {
             });
             setcartitems(response.data);
             settotalamount(response.data.Totalprice + 150)
-            // console.log(response.data);
+            console.log(response.data);
         } catch (err) {
             console.error('Error fetching user information:', err);
         }
@@ -98,7 +98,7 @@ export default function Cart() {
     }
     
     const handleClick = async (e) => {
-        //e.preventDefault();
+        e.preventDefault();
         const token = localStorage.getItem('token');
     
         try {
