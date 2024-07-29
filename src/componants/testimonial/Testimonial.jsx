@@ -31,7 +31,7 @@ export default function Testimonial() {
                         <div className="review">
                             <div className="heading">
                                 <FaUser />
-                                <h4>magodiya prashant</h4>
+                                <h4>Ratnesh kumawat</h4>
                             </div>
                             <div className="review_contant">
 
@@ -50,7 +50,7 @@ export default function Testimonial() {
                         <div className="review">
                             <div className="heading">
                                 <FaUser />
-                                <h4>magodiya prashant</h4>
+                                <h4>darshit mungra</h4>
                             </div>
                             <div className="review_contant">
 
@@ -68,7 +68,7 @@ export default function Testimonial() {
                         <div className="review">
                             <div className="heading">
                                 <FaUser />
-                                <h4>magodiya prashant</h4>
+                                <h4>avi chovatiya</h4>
                             </div>
                             <div className="review_contant">
 
