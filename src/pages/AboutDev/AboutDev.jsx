@@ -33,6 +33,7 @@ export default function AboutDev() {
                 </video>
             </section>
             <div className="qutionssection">
+                                    <p>please read the hosting proble i hope you will understand what is happening</p>
                 <h2>about Developer?</h2>
                 <p>
                     hey there , its me <span className='boldone'>Ratensh Kumawat</span> <br /> <br />
@@ -109,6 +110,14 @@ export default function AboutDev() {
                 <div className='hold_my_prob'>
 
                     <h2>What probleams i faced</h2>
+                                        <p>
+                        <span className='boldone'>
+                            hosting
+                        </span> <br />
+                        my backend is not connecting to frontend if you are reading this.. thats mean you alredy know that.. its bcoz of hosting in vercel is its new to me.. and i hosted both at 29-07-2004
+                        its maked me so depressed at this moment.. like i just did everything for nothing.. well it is very bad for me.. i worked today more than 7hrs.. still cants fix hosting error so i desided to make this static notice if to explain why its is not working
+                        
+                    </p>
                     <p>
                         <span className='boldone'>
                             Css
