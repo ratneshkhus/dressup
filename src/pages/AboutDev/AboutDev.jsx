@@ -36,7 +36,7 @@ export default function AboutDev() {
                                     <p>please read the hosting proble i hope you will understand what is happening</p>
                 <a href="https://www.linkedin.com/posts/ratnesh-kumawat-6301b425b_internship-uiux-uiuxdesigner-activity-7223958149307756544-YSK6?utm_source=share&utm_medium=member_android"
                             target="_blank" rel="noopener noreferrer">
-                            <CiLinkedin fontSize={"1.5rem"} color='white' /> proof that this project is working <span className='boldone'>
+                            <CiLinkedin fontSize={"1.5rem"} color='black' /> proof that this project is working <span className='boldone'>
                             : video
                         </span>
                         </a>
