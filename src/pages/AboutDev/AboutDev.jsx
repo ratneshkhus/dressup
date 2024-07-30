@@ -78,6 +78,7 @@ export default function AboutDev() {
                     additionl :
                 </span>
                 <p>UI/UX design by me using figma ✅</p>
+                <p>fetching images from cloud storage ✅</p>
                 <p>Searching ✅</p>
                 <p>filter by tags (categories) ✅ </p>
                 <p>user profile ✅ </p>
