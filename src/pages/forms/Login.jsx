@@ -12,7 +12,7 @@ export default function Login() {
   const handlesubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('https://codsoft-dressupproject.vercel.app/login', { email, password });
+      const response = await axios.post('https://codsoft_dressupproject.vercel.app/login', { email, password });
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       window.location.href = '/browse';
