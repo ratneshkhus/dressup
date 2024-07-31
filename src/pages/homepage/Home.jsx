@@ -15,6 +15,7 @@ import pfp from './cloths/poses-for-pictures.jpg'
 import Testimonial from '../../componants/testimonial/Testimonial';
 import LoaderAni from '../../componants/LoaderAni'
 import Card from '../../componants/cards/Card'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -68,11 +69,23 @@ export default function Home() {
       }
     };
     fetchRandomClothes();
+
+        toast.error('please check the aboutdev page before exploreing the project', {
+      position: "top-center",
+      autoClose: 10000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }, []);
 
 
   return (
     <>
+            <ToastContainer />
       <Hero />
       <section className='banner_offer_design'>
         <div className="bg_BIG_imgs" >
