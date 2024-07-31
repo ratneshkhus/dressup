@@ -128,9 +128,9 @@ export default function Home() {
 
       <section id='cardsection' >
         
-                <p style={{marginBottom: "20px"}}>note :- its really hard to tell that my projects is working locally but not after hosting bcoz its cants connect to backend both area hosted in vercel hosting.. yeah like its very bad feeling i did every thing in this month and after hosting backend is not coneecting to front end.. here are some thing i did in this projects
+{/*                 <p style={{marginBottom: "20px"}}>note :- its really hard to tell that my projects is working locally but not after hosting bcoz its cants connect to backend both area hosted in vercel hosting.. yeah like its very bad feeling i did every thing in this month and after hosting backend is not coneecting to front end.. here are some thing i did in this projects */}
           <Link to={'/aboutdev'} ><h3 style={{color :'#9A4AFF'}}>about this project !</h3></Link>
-        </p>
+{/*         </p> */}
         <h1>Fashion brands</h1>
         <div className="card_container" style={{ width: "100%" }}>
             {/* {Products.map((Product, key) => {
